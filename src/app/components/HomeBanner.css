@@ -1,0 +1,140 @@
+/* .slick-dots {
+    bottom: -40px;
+  }
+  
+  .slick-dots li {
+    width: 16px;
+    height: 16px;
+    margin: 0 20px;
+  }
+  
+  .slick-dots li button {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 0;
+    width: 16px;
+    height: 16px;
+    content: '';
+    border-radius: 50%;
+    border: 1px solid #a2a89f;
+    opacity: 1;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    background-color: #088080;
+  }
+  
+  @media (max-width: 768px) {
+    .slick-dots {
+      bottom: 15px;
+    }
+  }
+  
+   */
+
+   .home-banner-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 50px; /* Add space for dots */
+  }
+  
+  .banner-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .banner-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Dot styles */
+  .slick-dots {
+    bottom: -40px; /* Adjust this value as needed */
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 20px;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  /* .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 6px;
+    height: 16px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+    
+  } */
+  
+  .slick-dots li button:before {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    content: "";
+    border-radius: 50%;
+    border: 1px solid #a2a89f;
+    opacity: 1;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    background-color: #088080;
+  }
+  
+  @media (max-width: 768px) {
+    .banner-buttons {
+      flex-direction: column;
+      align-items: center;
+      
+      gap: 10px;
+    }
+  
+    .banner-button {
+      width: 70%;
+      text-align: center;
+    }
+  
+    .banner-text {
+      font-size: 14px;
+    }
+  
+    .slick-dots {
+      bottom: -35px;
+    }
+  
+    .slick-dots li {
+      margin: 0 5px;
+    }
+  
+    .slick-dots li button:before {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  
+  
