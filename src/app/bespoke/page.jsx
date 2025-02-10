@@ -1,26 +1,10 @@
-// import Footer from "../components/Footer";
-// import Header from "../components/Header";
-// import { getNavLinkMenu } from "../service/apiService";
 
-// export default async function Page() {
-//     const navItems = await getNavLinkMenu();
-//     return (
-//         <div>
-//            <Header navItems={navItems}/> 
-//            <h1>
-//                Bespoke
-//            </h1>
-//            <Footer/>
-//         </div>
-//     );
-// }
 
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import { getNavLinkMenu,getBespokeData } from "../service/apiService"
 import Image from "next/image"
 import {InquireBtn} from "../components/InquireBtn"
-// import { Button } from "@/components/ui/button"
 
 // Helper function to convert the rich text to plain text
 const getPlainText = (root) => {
@@ -58,8 +42,8 @@ export default async function Page() {
             />
           </div>
         </div>
-        <div className="text-center mb-4 p-2">
-          <p className="text-[#008080] font-bold text-2xl leading-relaxed tracking-wider">
+        <div className="text-center mb-4 p-4">
+          <p className="text-[#008080] font-bold text-xl leading-relaxed tracking-wider text-start">
             {getPlainText(data?.imgdescription?.root)}
           </p>
         </div>
@@ -85,8 +69,8 @@ export default async function Page() {
           />
         </div>
 
-        <div className="text-center mb-4 p-2">
-          <p className="text-[#008080] font-bold text-2xl leading-relaxed tracking-wider">
+        <div className="text-center mb-4 p-4">
+          <p className="text-[#008080] font-bold text-xl leading-relaxed tracking-wider text-start">
             {getPlainText(data?.description?.root)}
           </p>
         </div>

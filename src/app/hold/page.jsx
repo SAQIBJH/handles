@@ -30,7 +30,7 @@ export default async function Page() {
     <div>
       <Header navItems={navItems} />
 
-      <main className="flex-1 flex flex-col items-center justify-center py-4 sm:py-6 md:py-8 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto gap-y-4 sm:gap-y-6 md:gap-y-8">
+      <main className="flex-1 flex flex-col items-center justify-center py-4 sm:py-6 md:py-8 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto gap-y-4 sm:gap-y-6 md:gap-y-6">
         <div className="flex flex-col items-center justify-center ">
           <img
             src={`${process.env.NEXT_PUBLIC_API_URL}${image?.url}`}
@@ -54,7 +54,7 @@ export default async function Page() {
           content={description}
           elementRenderers={{
             paragraph: (props) => (
-              <p className="text-xl sm:text-2xl md:text-3xl text-black leading-relaxed tracking-widest font-normal text-center sm:text-justify mb-4 last:mb-0">
+              <p className="text-xl sm:text-lg md:text-xl text-black leading-relaxed tracking-widest font-normal text-justify max-sm:text-start last:mb-2">
                 {props.children}
               </p>
             ),
@@ -66,13 +66,13 @@ export default async function Page() {
           href={websitelink}
           target="_blank"
           rel="noreferrer"
-          className="text-lg sm:text-xl md:text-2xl tracking-wider text-[#088080] underline hover:text-[#066666] transition-colors"
+          className="text-lg sm:text-xl md:text-2xl tracking-wider text-[#088080] underline hover:text-[#066666] transition-colors mt-4"
         >
           VISIT THE WEBSITE
         </a>
 
         {/* Divider */}
-        <div className="w-full max-w-[500px] h-2 bg-gray-200 rounded-md my-4 sm:my-6 md:my-8"></div>
+        <div className="w-full max-w-[500px] h-2 bg-gray-200 rounded-md my-4 sm:my-6 md:my-2"></div>
 
         {/* Category Links */}
         <div className="flex flex-wrap justify-center gap-4 px-4">
