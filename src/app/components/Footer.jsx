@@ -4,15 +4,15 @@ import { Ubuntu } from "next/font/google";
 const navigationData = {
   column1: [
     { title: "About Us", href: "/" },
-    { title: "Terms & Conditions", href: "/" },
-    { title: "FAQ", href: "/" },
+    { title: "Terms & Conditions", href: "/termsandconditions" },
+    { title: "FAQ", href: "/faqs" },
   ],
   column2: [
     { title: "Handles", href: "/" },
     { title: "Door Accessories", href: "/" },
-    { title: "Bespoke Design", href: "/" },
-    { title: "Contact Us", href: "/" },
-    { title: "Catalog", href: "/" },
+    { title: "Bespoke Design", href: "/bespoke" },
+    { title: "Contact Us", href: "/contact-us" },
+    { title: "Catalog", href: "/catalogues" },
   ],
 };
 
@@ -55,7 +55,7 @@ const Footer = () => {
       <Link
         key={index}
         href={link.href}
-        className="block hover:text-gray-200 text-lg tracking-wide"
+        className="block hover:text-gray-200 hover:underline text-lg tracking-wide"
       >
         {link.title}
       </Link>

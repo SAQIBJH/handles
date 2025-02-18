@@ -402,3 +402,56 @@ export const getHomeBannerData = async () => {
     return [];
   }
 }
+
+
+export const getTermsandConditons = async () => {
+  try {
+    const response = await fetch (`${process.env.NEXT_PUBLIC_API_URL}/api/termsandcondition/1?depth=1&draft=false&locale=undefined`)
+    if(!response.ok) return {};
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("getTermsandConditons error :", error);
+    return;
+  }
+}
+
+export const getFAQData = async () =>{
+  try {
+    const response = await fetch (`${process.env.NEXT_PUBLIC_API_URL}/api/faq/1?depth=1&draft=false&locale=undefined`)
+    if(!response.ok)return {};
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("getFAQData ",error)
+    return {};
+  }
+}
+
+export const getContactData = async () => {
+ try {
+   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/ourcontactus/1?depth=1&draft=false&locale=undefined`)
+   if(!response.ok){
+     return {};
+   }
+   const data = await response.json();
+   return data;
+ } catch (error) {
+    console.error("getContactData ::",error);
+    return {};
+ }
+}
+
+export const getContactFormData = async () =>{
+try {
+  const response = await fetch (`${process.env.NEXT_PUBLIC_API_URL}/api/dynamicform/1?depth=1&draft=false&locale=undefined`)
+  if(!response.ok){
+    return {};
+  }
+  const data = await response.json();
+  return data;
+} catch (error) {
+  console.error("getContactFormData ::",error);
+  return {};
+}
+}
