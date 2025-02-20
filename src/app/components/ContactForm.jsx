@@ -59,7 +59,6 @@ export const ContactForm = memo(({ fields }) => {
         };
 
         try {
-            console.log("Sending payload:", JSON.stringify(payload, null, 2));
             
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/dynamicformsubmission/SaveForm`, {
                 method: "POST",
@@ -69,7 +68,6 @@ export const ContactForm = memo(({ fields }) => {
                 // },
                 body: JSON.stringify(payload)
             });
-            console.log("Response:", response);
 
             if (!response.ok) {
                 const errorText = await response.text();
@@ -78,7 +76,6 @@ export const ContactForm = memo(({ fields }) => {
             }
 
             const data = await response.json();
-            console.log("Success:", data);
 
             // Reset form after submission
             setFormData(fields.reduce((acc, field) => ({ ...acc, [field.name]: "" }), {}));

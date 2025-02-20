@@ -8,14 +8,14 @@ import { ContactForm } from "../components/ContactForm";
 export default async function Page() {
     const navItems = await getNavLinkMenu();
     const contactData = await getContactData();
-    const { fields = [] } = await getContactFormData();
+    const { fields = [], description : contactDescription = "" } = await getContactFormData();
     const { title = "", bannerimage = {}, description = "", ourlocations = [], ourcontactinfos = [] } = contactData || {};
     const [location = {}, address = {}] = ourlocations || [];
 
     return (
         <div>
             <Header navItems={navItems} />
-            <section className="flex flex-col items-center gap-y-16 max-w-6xl mx-auto lg:py-12 lg:px-12 p-4">
+            <section className="flex flex-col items-center gap-8 lg:gap-y-16 max-w-6xl mx-auto lg:py-12 lg:px-12 p-4">
                 <div className="flex relative w-full">
                     <img
                         src={bannerimage?.url ? `${process.env.NEXT_PUBLIC_API_URL}${bannerimage?.url}` : "/default-image.jpg"}
@@ -37,11 +37,14 @@ export default async function Page() {
                     <PayloadLexicalReactRenderer content={description} />
                 </div>
 
-                <div className="flex w-full mx-auto gap-24 justify-between py-6 lg:flex-row flex-col">
-                    <div className="lg:-w-[70%] lg:py-6 py-2">
+                <div className="flex w-full mx-auto gap-8 lg:gap-24 justify-between lg:py-6 lg:flex-row flex-col">
+                    <div className="lg:-w-[70%]  py-2">
+                        <>
+                        {contactDescription && <p className="text-[#088080] text-lg font-normal p-2 mb-2">{contactDescription}</p>}
+                        </>
                         <ContactForm fields={fields} />
                     </div>
-                    <div className="flex flex-col  gap-12 p-4 ">
+                    <div className="flex flex-col  gap-12 p-4 lg:mt-4 ">
                         <div className="flex flex-col gap-4">
                             <span className="text-[#088080] text-xl underline decoration-4 decoration-gray-600 underline-offset-8 mb-2">
                                 Our Location:
@@ -71,7 +74,7 @@ export default async function Page() {
                                 <span className="inline-flex text-lg text-[#088080]">{ourcontactinfos[0]?.email}</span>
                             </div>
                             <div className="flex gap-3">
-                                <img src="/global-network.jpeg" alt="" className="w-6 h-6 inline-flex" />
+                                <img src="/global-network.png" alt="" className="w-6 h-6 inline-flex" />
                                 <span className="inline-flex text-lg text-[#088080]">{ourcontactinfos[0]?.website}</span>
                             </div>
                         </div>
