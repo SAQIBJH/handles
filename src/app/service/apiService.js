@@ -8,7 +8,7 @@ export const getNavLinkMenu = async () => {
           "Content-Type": "application/json",
           // "Authorization":"",
         },
-        cache: "no-cache",
+        // cache: "no-cache",
       }
     );
 
