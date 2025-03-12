@@ -55,7 +55,7 @@ export const getsubCategory = async (subcategory) => {
           "Content-Type": "application/json",
           // "Authorization":"",
         },
-        cache: "no-cache",
+        // cache: "no-cache",
       }
     );
 
@@ -102,7 +102,7 @@ export const getSubCategoryProductdata = async (subcategory, filterBrand, finish
           "Content-Type": "application/json",
           // "Authorization":"",
         },
-        cache: "no-cache",
+        // cache: "no-cache",
       }
     );
 
@@ -131,7 +131,7 @@ export const getProductData = async (product) => {
           "Content-Type": "application/json",
           // "Authorization":"",
         },
-        cache: "no-cache",
+        // cache: "no-cache",
       }
     );
 
@@ -161,7 +161,7 @@ export const getHandlesData = async () => {
           "Content-Type": "application/json",
           // "Authorization":"",
         },
-        cache: "no-cache",
+        // cache: "no-cache",
       }
     );
 
@@ -191,7 +191,7 @@ export const getBrandsData = async () => {
           "Content-Type": "application/json",
           // "Authorization":"",
         },
-        cache: "no-cache",
+        // cache: "no-cache",
       }
     );
 
@@ -221,7 +221,7 @@ export const getCatalogueData = async () => {
           "Content-Type": "application/json",
           // "Authorization":"",
         },
-        cache: "no-cache",
+        // cache: "no-cache",
       }
     );
 
@@ -249,7 +249,7 @@ export const otherCategoriesData = async (subcategory = "") => {
           "Content-Type": "application/json",
           // "Authorization":"",
         },
-        cache: "no-cache",
+        // cache: "no-cache",
       }
     );
 

@@ -12,7 +12,7 @@ const nextConfig = {
         },
       ],
       images: {
-        domains: ['musing-nobel.97-74-95-14.plesk.page'],
+        domains: ['test.handles-more.com'],
       },
 };
 
