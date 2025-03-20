@@ -392,7 +392,7 @@ export const getBrandCategoryData = async (brand = "") => {
 export const getHomeBannerData = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/home?depth=2`
+      `${process.env.NEXT_PUBLIC_API_URL}/api/home?depth=2&sort=order`
     );
     if (!response.ok) return [];
     const data = await response.json();
