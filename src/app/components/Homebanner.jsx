@@ -164,6 +164,9 @@ import "./HomeBanner.css"
 import { PayloadLexicalReactRenderer } from "@atelier-disko/payload-lexical-react-renderer"
 
 const HomeBanner = ({ homeBannerData = [] }) => {
+  if (!homeBannerData || homeBannerData.length === 0) {
+    return <div>No banners available</div>; // Handle empty data case
+  }
   const settings = {
     dots: true,
     infinite: true,
@@ -185,7 +188,11 @@ const HomeBanner = ({ homeBannerData = [] }) => {
                 <div>
                   <div className="flex justify-center items-center mb-4">
                     <Image 
-                      src={`${process.env.NEXT_PUBLIC_API_URL}${data?.iconimage?.url}`} 
+                      src={
+                        data?.bannerimage?.url ?
+                        `${process.env.NEXT_PUBLIC_API_URL}${data?.iconimage?.url}` :
+                        "/logo.png"
+                      } 
                       alt={data?.iconimage?.alt || "brand Logo"} 
                       width={150} 
                       height={150}
@@ -193,7 +200,11 @@ const HomeBanner = ({ homeBannerData = [] }) => {
                     />
                   </div>
                   <div className="banner-text inline-flex font-light text-[#545454] md:text-xs">
-                    <PayloadLexicalReactRenderer content={data?.description} />
+                  {data?.description ? (
+  <PayloadLexicalReactRenderer content={data.description} />
+) : (
+  <p>No description available</p>
+)}
                   </div>
                 </div>
                 
@@ -214,12 +225,16 @@ const HomeBanner = ({ homeBannerData = [] }) => {
                   </a>
                 </div>
               </div>
-
+            {console.log("imgg",`${process.env.NEXT_PUBLIC_API_URL}${data?.bannerimage?.url}`)}
               {/* Image Container - Responsive but Consistent */}
               <div className="relative w-full h-[300px] md:h-[400px]">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL}${data?.bannerimage?.url}`}
-                  alt="Banner Image"
+                  src={
+                    data?.bannerimage?.url ?
+                    `${process.env.NEXT_PUBLIC_API_URL}${data?.bannerimage?.url}`
+                    : "/bannerImage.png"
+                  }
+                  alt={data?.bannerimage?.alt || "Banner Image"}
                   fill
                   style={{ objectFit: 'contain' }}
                   className="p-4"
