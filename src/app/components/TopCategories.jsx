@@ -2,13 +2,13 @@ import React from "react";
 
 // Simulated data from the backend (without the cols field)
 const categoriesFromBackend = [
-  { title: "Furniture Handles", image: "/image1.png" },
-  { title: "Bathroom Handles", image: "/image2.png" },
-  { title: "Locks", image: "/image4.png" },
-  { title: "Door Handles", image: "/image8.png" },
-  { title: "Door Knobs", image: "/image5.png" },
-  { title: "Sliding Doors", image: "/image3.png" },
-  { title: "Pull Handles", image: "/image4.png" },
+  { title: "Furniture Handles", image: "/FurnitureHandles.png" },
+  { title: "Bathroom Handles", image: "/BathroomHandles.png" },
+  { title: "Locks", image: "/DoorLocks.png" },
+  { title: "Door Handles", image: "/DoorHandles.png" },
+  { title: "Door Knobs", image: "/DoorKnobs.png" },
+  { title: "Sliding Doors", image: "/SlidingDoors.png" },
+  { title: "Pull Handles", image: "/PullHandles.png" },
 ];
 
 const CategoryGrid = () => {
