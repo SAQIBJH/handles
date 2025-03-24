@@ -154,7 +154,7 @@ export const getProductData = async (product) => {
 export const getHandlesData = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/Products?select[title]=true&select[image]=true&select[completeurl]=true&where[Category.categoryslug][equals]=handles&limit=10`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/Products?select[title]=true&select[image]=true&select[completeurl]=true&where[Category.categoryslug][equals]=handles&limit=10&sort=order`,
       {
         method: "GET",
         headers: {

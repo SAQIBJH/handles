@@ -5,10 +5,10 @@ const categoriesFromBackend = [
   { title: "Furniture Handles", image: "/FurnitureHandles.png" },
   { title: "Bathroom Handles", image: "/BathroomHandles.png" },
   { title: "Locks", image: "/DoorLocks.png" },
-  { title: "Door Handles", image: "/DoorHandles.png" },
+  { title: "Pull Handles", image: "/PullHandles.png" },
   { title: "Door Knobs", image: "/DoorKnobs.png" },
   { title: "Sliding Doors", image: "/SlidingDoors.png" },
-  { title: "Pull Handles", image: "/PullHandles.png" },
+  { title: "Door Handles", image: "/DoorHandles.png" },
 ];
 
 const CategoryGrid = () => {
