@@ -15,7 +15,6 @@ import { getTopCategoriesData } from "../service/apiService";
 const CategoryGrid = async() => {
   // Define the column and row spans separately
   const categoriesData =  await getTopCategoriesData();
-  console.log(categoriesData);
   if(!categoriesData || !categoriesData.length) return null;
   const layout = [
     "col-span-12 md:col-span-3 row-span-1",

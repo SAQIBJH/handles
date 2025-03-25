@@ -225,7 +225,6 @@ const HomeBanner = ({ homeBannerData = [] }) => {
                   </a>
                 </div>
               </div>
-            {console.log("imgg",`${process.env.NEXT_PUBLIC_API_URL}${data?.bannerimage?.url}`)}
               {/* Image Container - Responsive but Consistent */}
               <div className="relative w-full h-[300px] md:h-[400px]">
                 <Image
