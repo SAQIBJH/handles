@@ -1,18 +1,22 @@
 import React from "react";
+import { getTopCategoriesData } from "../service/apiService";
 
 // Simulated data from the backend (without the cols field)
-const categoriesFromBackend = [
-  { title: "Furniture Handles", image: "/FurnitureHandles.png" },
-  { title: "Bathroom Handles", image: "/BathroomHandles.png" },
-  { title: "Locks", image: "/DoorLocks.png" },
-  { title: "Pull Handles", image: "/PullHandles.png" },
-  { title: "Door Knobs", image: "/DoorKnobs.png" },
-  { title: "Sliding Doors", image: "/SlidingDoors.png" },
-  { title: "Door Handles", image: "/DoorHandles.png" },
-];
+// const categoriesFromBackend = [
+//   { title: "Furniture Handles", image: "/FurnitureHandles.png" },
+//   { title: "Bathroom Handles", image: "/BathroomHandles.png" },
+//   { title: "Locks", image: "/DoorLocks.png" },
+//   { title: "Pull Handles", image: "/PullHandles.png" },
+//   { title: "Door Knobs", image: "/DoorKnobs.png" },
+//   { title: "Sliding Doors", image: "/SlidingDoors.png" },
+//   { title: "Door Handles", image: "/DoorHandles.png" },
+// ];
 
-const CategoryGrid = () => {
+const CategoryGrid = async() => {
   // Define the column and row spans separately
+  const categoriesData =  await getTopCategoriesData();
+  console.log(categoriesData);
+  if(!categoriesData || !categoriesData.length) return null;
   const layout = [
     "col-span-12 md:col-span-3 row-span-1",
     "col-span-12 md:col-span-5 row-span-1",
@@ -30,14 +34,14 @@ const CategoryGrid = () => {
       </h1>
 
       <div className="grid grid-cols-12 gap-4 grid-rows-2 h-auto md:h-[580px]">
-        {categoriesFromBackend.map((category, index) => (
+        {categoriesData?.map((category, index) => (
           <div
             key={index}
             className={`relative group cursor-pointer ${layout[index]} `}
           >
             <div className="relative h-full overflow-hidden rounded-lg">
               <img
-                src={category.image || null}
+                src={`${process.env.NEXT_PUBLIC_API_URL}${category?.iconimage?.url}`  || null}
                 alt={category.title}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />

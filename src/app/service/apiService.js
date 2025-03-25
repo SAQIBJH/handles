@@ -455,3 +455,17 @@ try {
   return {};
 }
 }
+
+export const getTopCategoriesData = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/topcategories?depth=1&draft=false&locale=undefined&sort=order`
+    );
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data?.docs || [];
+  } catch (error) {
+    console.error("getTopCategoriesData error:", error);
+    return [];
+  }
+};
