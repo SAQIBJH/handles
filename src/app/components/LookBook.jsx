@@ -1,16 +1,8 @@
 import React from "react";
-const images = [
-  { id: 1, imageUrl: "/image1.png", alt: "Image 1" }, // Full 1st column image
-  { id: 2, imageUrl: "/image2.png", alt: "Image 2" }, // Column 5-7 (row 1-5)
-  { id: 3, imageUrl: "/image3.png", alt: "Image 3" }, // Column 5-7 (row 6)
-  { id: 4, imageUrl: "/image4.png", alt: "Image 4" }, // Column 8-9 (full row)
-  { id: 5, imageUrl: "/image5.png", alt: "Image 5" }, // Column 10-12 (row 1-3)
-  { id: 6, imageUrl: "/image6.png", alt: "Image 6" }, // Column 10-12 (row 4-6)
-];
+import { getLookBookData } from "../service/apiService";
 
-
-
-const GridLayout = () => {
+const GridLayout = async () => {
+  const images = await getLookBookData();
     if (!images?.length || images.length < 6) {
       return <div>Please provide at least 6 images</div>;
     }
@@ -56,9 +48,10 @@ const GridLayout = () => {
                       className={`md:row-span-${section.rowConfig[imageIndex].span}`}
                     >
                       <img
-                        src={image.imageUrl}
+                        src={`${process.env.NEXT_PUBLIC_API_URL}${image?.iconimage?.url}`}
                         alt={image.alt}
                         className="w-full h-64 md:h-full object-cover rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   ))}
@@ -74,9 +67,10 @@ const GridLayout = () => {
                 {sectionImages.map((image) => (
                   <img
                     key={image.id}
-                    src={image.imageUrl}
-                    alt={image.alt}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}${image?.iconimage?.url}`}
+                    alt={image?.iconimage?.alt}
                     className="w-full h-64 md:h-full object-cover rounded-lg"
+                    loading="lazy"
                   />
                 ))}
               </div>

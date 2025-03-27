@@ -469,3 +469,18 @@ export const getTopCategoriesData = async () => {
     return [];
   }
 };
+
+export const getLookBookData = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/lookbook?depth=2&draft=false&locale=undefined&sort=order`
+    );
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data?.docs || [];
+  }
+  catch (error) {
+    console.error("getLookBookData error:", error);
+    return [];
+  }
+}

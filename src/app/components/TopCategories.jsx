@@ -43,6 +43,7 @@ const CategoryGrid = async() => {
                 src={`${process.env.NEXT_PUBLIC_API_URL}${category?.iconimage?.url}`  || null}
                 alt={category.title}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-black/30 transition-opacity group-hover:bg-black/40">
                 <h2 className="absolute bottom-6 left-6 text-white text-2xl font-light">
